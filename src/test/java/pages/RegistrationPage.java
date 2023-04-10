@@ -38,7 +38,7 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setFirstName(String value) {
-        step( "Ввести имя пользователя", () -> {
+        step("Ввести имя пользователя", () -> {
             firstName.setValue(value);
         });
         return this;
@@ -119,7 +119,7 @@ public class RegistrationPage {
     public RegistrationPage setCity(String value) {
         step("Выбрать город", () -> {
             $("#city").click();
-        $(byText(value)).click();
+            $(byText(value)).click();
         });
         return this;
     }

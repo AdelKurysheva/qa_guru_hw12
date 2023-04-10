@@ -10,31 +10,32 @@ import static io.qameta.allure.Allure.step;
 import static tests.FakerData.*;
 import static tests.FakerData.city;
 
-public class RegistrationTestsWitchFakerData extends TestBase{
+public class RegistrationTestsWitchFakerData extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
+    @Tag("demoqa")
     @Test
     @DisplayName("Заполнение формы регистрации студента")
     void testForm() {
         Faker faker = new Faker();
 
         step("Заполняем форму регистрации", () -> {
-                    registrationPage.openPage()
-                            .closeBanner()
-                            .setFirstName(firstName)
-                            .setLastName(lastName)
-                            .setUserEmail(userEmail)
-                            .setGender(userGender)
-                            .setPhoneNumber(phoneNumber)
-                            .dateBirthday(dayOfBirth, monthOfBirth, yearOfBirth)
-                            .setSubjectsInput(subject)
-                            .setHobbies(hobby)
-                            .setUploadFile(picture)
-                            .setCurrentAddress(currentAddress)
-                            .setState(state)
-                            .setCity(city)
-                            .setClickSubmit();
-                });
+            registrationPage.openPage()
+                    .closeBanner()
+                    .setFirstName(firstName)
+                    .setLastName(lastName)
+                    .setUserEmail(userEmail)
+                    .setGender(userGender)
+                    .setPhoneNumber(phoneNumber)
+                    .dateBirthday(dayOfBirth, monthOfBirth, yearOfBirth)
+                    .setSubjectsInput(subject)
+                    .setHobbies(hobby)
+                    .setUploadFile(picture)
+                    .setCurrentAddress(currentAddress)
+                    .setState(state)
+                    .setCity(city)
+                    .setClickSubmit();
+        });
 
         step("Проверка правильности заполнения формы", () -> {
             registrationPage.verifyResultsModalAppears()
