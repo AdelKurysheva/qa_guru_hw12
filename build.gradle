@@ -50,6 +50,17 @@ dependencies {
             "io.qameta.allure:allure-junit5:2.18.1",
             'io.qameta.allure:allure-selenide:2.19.0')
 }
+tasks.withType(Test) {
+    useJUnitPlatform()
+    systemProperties(System.getProperties())
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
 test {
     useJUnitPlatform()
 }
