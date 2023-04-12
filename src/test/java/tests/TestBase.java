@@ -14,10 +14,10 @@ import java.util.Map;
 public class TestBase {
     @BeforeAll
     static void beforeAll() {
+        Configuration.browserSize = System.getProperty("browserSize");
         Configuration.baseUrl = System.getProperty("baseUrl");
         Configuration.browser = System.getProperty("browser");
-        Configuration.browserVersion = System.getProperty("browserVersion");
-        Configuration.browserSize = System.getProperty("browserSize");
+        Configuration.browserVersion = System.getProperty("browser");
         Configuration.remote = "https://user1:1234@" + System.getProperty("selenoidAddress");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
