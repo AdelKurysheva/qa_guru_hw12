@@ -14,8 +14,7 @@ public class RegistrationsResult {
 
     public void verifyResults(String key, String value) {
         step("Проверяем поле " + key, () -> {
-            $(".table-responsive").$(byText(key)).parent()
-                    .shouldHave(text(value));
+            $(".table-responsive").$(byText(key)).parent().shouldHave(text(value));
         });
     }
 }
